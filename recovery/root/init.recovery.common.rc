@@ -160,6 +160,8 @@ on boot
     chmod 660 /sys/class/power_supply/battery/charger.0/jeita_control
     chmod 660 /sys/class/power_supply/battery/input_current_limit
     chmod 660 /sys/class/power_supply/battery/constant_charge_current
+    insmod /vendor_dlkm/lib/modules/focaltech_ft8756_spi_ts.ko
+    insmod /vendor_dlkm/lib/modules/adaptive-ts.ko
 
 on fs
     #mkdir /data/misc/bluedroid 0770 bluetooth net_bt_stack
