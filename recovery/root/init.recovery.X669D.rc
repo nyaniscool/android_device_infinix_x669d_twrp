@@ -2,4 +2,5 @@
 import /init.recovery.common.rc
 
 on boot
+    insmod /vendor_dlkm/lib/modules/focaltech_ft8756_spi_ts.ko
     insmod /vendor_dlkm/lib/modules/adaptive-ts.ko
