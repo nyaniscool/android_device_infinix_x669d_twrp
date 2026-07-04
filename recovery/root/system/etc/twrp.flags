@@ -1,25 +1,19 @@
-# Twrp fstab file - RadGoodNow & arturmes
-
 # <mount_point>        <fstype>        <device>              <device2>                              <flags>
-/system_image          emmc       /dev/block/mapper/system                     flags=display="System image";slotselect;backup=1;flashimg=1
-/vendor_image          emmc       /dev/block/mapper/vendor                     flags=display="Vendor image";slotselect;backup=1;flashimg=1
+/system_image            emmc     /dev/block/by-name/system                    flags=display="System image";slotselect;backup=1;flashimg=1
+/vendor_image            emmc     /dev/block/by-name/vendor                    flags=display="Vendor image";slotselect;backup=1;flashimg=1
 
 # Dynamic Partitions
-/system_root             ext4     /dev/block/mapper/system                     flags=display="System";slotselect;backup=1
-/vendor                  ext4     /dev/block/mapper/vendor                     flags=display="Vendor";slotselect;backup=1
+/system_root             ext4     /dev/block/mapper/system                     flags=display="System";slotselect
+/vendor                  ext4     /dev/block/mapper/vendor                     flags=display="Vendor";slotselect
 /boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
+/vendor_boot             emmc     /dev/block/by-name/vendor_boot               flags=display=vendor_boot;slotselect;backup=1;flashimg=1
 /dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1
 /misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1
 /metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1
 
-# AVB
-/vbmeta                  emmc     /dev/block/by-name/vbmeta                    flags=display=vbmeta;slotselect;backup=1;flashimg=1
-/vbmeta_system           emmc     /dev/block/by-name/vbmeta_system             flags=display=vbmeta-system;slotselect;backup=1;flashimg=1
-/vbmeta_vendor           emmc     /dev/block/by-name/vbmeta_vendor             flags=display=vbmeta-vendor;slotselect;backup=1;flashimg=1
-/vbmeta_product          emmc     /dev/block/by-name/vbmeta_product            flags=display=vbmeta-product;slotselect;backup=1;flashimg=1
 # Removable storage
-/sdcard                  vfat     /dev/block/mmcblk1p1                         flags=display="external_sd";storage;wipeingui;backup=1;removable;fsflags="utf8"
-/usb-otg                 auto     /dev/block/sda1        /dev/block/sda        flags=display="usb-otg";storage;backup=1;removable
+/external_sd             auto     /dev/block/mmcblk1p1                         flags=display="SD-card";storage;wipeingui;backup=1;removable;fsflags="utf8"
+/usb_otg                 auto     /dev/block/sda1        /dev/block/sda        flags=display="USB-OTG";storage;backup=1;removable
 
 # Other partitions
 /spl                     emmc     /dev/block/mmcblk0boot0                      flags=display=spl;backup=1
@@ -33,6 +27,3 @@
 /ltefixnv2               emmc     /dev/block/by-name/l_fixnv2                  flags=display=ltefixnv2;slotselect;backup=1
 /cache                   ext4     /dev/block/by-name/cache                     flags=display=cache;wipeingui;backup=1
 /pmsys                   emmc     /dev/block/by-name/pm_sys                    flags=display=pmsys;slotselect;backup=1
-/qogirl6_m3l_cm4         emmc     /dev/block/by-name/pm_sys                    flags=display=qogirl6_m3l_cm4;slotselect
-/fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1;flashimg=1
-/logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1
