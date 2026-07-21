@@ -154,6 +154,8 @@ TW_MAX_BRIGHTNESS := 4095
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone0/temp"
 TW_DEFAULT_BRIGHTNESS := 4095
 TW_LOAD_VENDOR_BOOT_MODULES := true
+TW_USES_VENDOR_LIBS:= true
+TW_LOAD_VENDOR_MODULES:= true
 TW_CUSTOM_BATTERY_PATH := /sys/devices/platform/charger-manager/power_supply/battery
 
 # INCLUDE TWRP CONFIG
