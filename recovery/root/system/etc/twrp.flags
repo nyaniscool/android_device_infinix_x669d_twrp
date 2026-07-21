@@ -3,17 +3,17 @@
 /vendor_image            emmc     /dev/block/by-name/vendor                    flags=display="Vendor image";slotselect;backup=1;flashimg=1
 
 # Dynamic Partitions
-/system_root             ext4     /dev/block/mapper/system                     flags=display="System";slotselect
-/vendor                  ext4     /dev/block/mapper/vendor                     flags=display="Vendor";slotselect
+/system_root             erofs    /dev/block/mapper/system                     flags=display="System";slotselect
+/vendor                  erofs    /dev/block/mapper/vendor                     flags=display="Vendor";slotselect
 /boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
 /vendor_boot             emmc     /dev/block/by-name/vendor_boot               flags=display=vendor_boot;slotselect;backup=1;flashimg=1
 /dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1
 /misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1
-/metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1
+/metadata                f2fs     /dev/block/by-name/metadata                  flags=display=metadata;backup=1
 
 # Removable storage
 /external_sd             auto     /dev/block/mmcblk1p1                         flags=display="SD-card";storage;wipeingui;backup=1;removable;fsflags="utf8"
-/usb_otg                 auto     /dev/block/sda1        /dev/block/sda        flags=display="USB-OTG";storage;backup=1;removable
+/usb_otg                 auto     /dev/block/sdd1        /dev/block/sdd        flags=display="USB-OTG";storage;backup=1;removable
 
 # Other partitions
 /spl                     emmc     /dev/block/mmcblk0boot0                      flags=display=spl;backup=1
@@ -25,5 +25,5 @@
 /deltanv                 emmc     /dev/block/by-name/l_deltanv                 flags=display=deltanv;slotselect;backup=1
 /ltefixnv1               emmc     /dev/block/by-name/l_fixnv1                  flags=display=ltefixnv1;slotselect;backup=1
 /ltefixnv2               emmc     /dev/block/by-name/l_fixnv2                  flags=display=ltefixnv2;slotselect;backup=1
-/cache                   ext4     /dev/block/by-name/cache                     flags=display=cache;wipeingui;backup=1
+/cache                   f2fs     /dev/block/by-name/cache                     flags=display=cache;wipeingui;backup=1
 /pmsys                   emmc     /dev/block/by-name/pm_sys                    flags=display=pmsys;slotselect;backup=1
