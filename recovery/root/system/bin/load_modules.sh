@@ -3,6 +3,8 @@
 # TOUCH FIX
 load_panel()
 {
+	insmod /lib/modules/sensorhub.ko
+    insmod /lib/modules/tran_gesture.ko
 	insmod /lib/modules/gslX680.ko
 	insmod /lib/modules/adaptive-ts.ko
 	insmod /lib/modules/gpio.ko
