@@ -1,4 +1,8 @@
-# Android device tree for Infinix Hot 30i (X669D) By Kyros70
+# Android device tree for Infinix Hot 30i (X669D)
+Device tree by http://github.com/Kyros70/
+
+Flashing -
+fastboot flash vendor_boot vendor_boot.img
 
 ```
 #
